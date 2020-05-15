@@ -1,8 +1,25 @@
 # terraform-aws-openshift
 
-[![CircleCI](https://circleci.com/gh/dwmkerr/terraform-aws-openshift.svg?style=shield)](https://circleci.com/gh/dwmkerr/terraform-aws-openshift)
-
 This project shows you how to set up OpenShift on AWS using Terraform. This the companion project to my article [Get up and running with OpenShift on AWS](http://www.dwmkerr.com/get-up-and-running-with-openshift-on-aws/).
+
+## RHEL Modifications
+
+This has been modified such that
+
+```
+make registerhosts
+```
+
+Needs to be run in order to register the RHEL boxes and get the appropriate Openshift RPMs etc.
+
+You will need to change these in `makefile`
+
+```
+  export REDHAT_USERNAME=CHANGEME
+  export REDHAT_PASSWORD=CHANGEME
+  export REDHAT_POOLID=CHANGEME
+```
+
 
 ![OpenShift Sample Project](./docs/okd_3.11_screenshot.png)
 
