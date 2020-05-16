@@ -1,4 +1,8 @@
 //  Output some useful variables for quick SSH access etc.
+
+output "cluster-console" {
+  value = "${aws_route53_record.master_public.name}"
+}
 output "master-public_ip" {
   value = "${aws_eip.master_eip.public_ip}"
 }
